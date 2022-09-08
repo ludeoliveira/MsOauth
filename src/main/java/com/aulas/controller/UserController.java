@@ -28,9 +28,10 @@ public class UserController {
 	public ResponseEntity<Object> salvar(@RequestBody User user) {
 		User u = repo.findByEmail(user.getEmail());
 		if (u != null) {
-			return ResponseEntity.status(HttpStatus.OK).body(service.salvar(user));
+			return ResponseEntity.status(HttpStatus.OK).body("Usuário já cadastrado");
 		}
-		return ResponseEntity.status(HttpStatus.OK).body("Usuário já cadastrado");
+
+		return ResponseEntity.status(HttpStatus.OK).body(service.salvar(user));
 	}
 
 	@GetMapping("/user")
