@@ -1,0 +1,1 @@
+insert into produto(descricao, preco, estoque)values('Milho', 1.50, 10) 
